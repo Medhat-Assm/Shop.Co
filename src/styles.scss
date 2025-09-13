@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// Import tailwind CSS
+@import 'tailwindcss';
+
+// Configuration DarkMode
+@custom-variant dark (&:where(.dark, .dark *));
+
+// Import Flowbite CSS
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+
