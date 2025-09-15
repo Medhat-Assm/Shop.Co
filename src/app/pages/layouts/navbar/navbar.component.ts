@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/services/platform/platform.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent {
   //#region Service Inject
   private readonly platformService: PlatformService = inject(PlatformService);
-  private readonly translate = inject(TranslateService);
   //#endregion
 
   //#region Dark Mode Toggle
