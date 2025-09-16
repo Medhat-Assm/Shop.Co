@@ -6,11 +6,10 @@ import { NavbarComponent } from './pages/layouts/navbar/navbar.component';
 import { PlatformService } from './core/services/platform/platform.service';
 import { BannerComponent } from './pages/layouts/banner/banner.component';
 import { FooterComponent } from './pages/layouts/footer/footer.component';
-import { HomeComponent } from './pages/main/home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, BannerComponent, FooterComponent, HomeComponent],
+  imports: [NavbarComponent, BannerComponent, FooterComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
