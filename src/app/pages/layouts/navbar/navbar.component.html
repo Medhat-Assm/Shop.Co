@@ -2,7 +2,7 @@
   class="bg-black rounded-[15px] md:rounded-[50px] md:mt-5 dark:bg-white transition-colors duration-500 ease-in-out fixed w-full z-20 top-0 md:top-15 md:top-10 rtl:end-[50%] rtl:translate-x-[50%] start-[50%] translate-x-[-50%] lg:container lg:mx-auto"
 >
   <div class="flex flex-wrap items-center justify-between p-4">
-    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a routerLink="home" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img
         src="/images/Shop.Co Logo.png"
         class="w-10 block dark:hidden transition-colors duration-500 ease-in-out"
@@ -150,8 +150,9 @@
               </li>
               <li>
                 <a
+                  routerLink="change-password"
                   class="block px-4 py-2 text-sm text-white dark:text-black cursor-pointer dark:hover:bg-gray-200 hover:bg-gray-800 dark:hover:text-gray-500"
-                  >{{ 'Profile' | translate }}</a
+                  >{{ 'Change Password' | translate }}</a
                 >
               </li>
               <li>
@@ -279,7 +280,7 @@
               </li>
               <div class="h-[0.5px] w-full bg-gray-800 dark:bg-gray-100"></div>
               <li>
-                <a class="cursor-pointer"
+                <a routerLink="change-password" class="cursor-pointer"
                   ><div class="flex items-center gap-4">
                     <i
                       class="fa-solid fa-user text-white dark:text-black transition-colors duration-500 ease-in-out"

@@ -53,4 +53,10 @@ export class AuthService {
       .put(`${environment.baseUrl}auth/resetPassword`, userData)
       .pipe(tap((res) => console.log(res)));
   }
+
+  updateLoggedUserPassword(userData: User): Observable<any> {
+    return this.httpClient
+      .put(`${environment.baseUrl}users/changeMyPassword`, userData)
+      .pipe(tap((res) => console.log(res)));
+  }
 }

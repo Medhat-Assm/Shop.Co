@@ -1,6 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
 import { AuthService } from '../../../core/services/auth/auth.service';
-import { User } from '../../../core/interfaces/user';
 import {
   AbstractControl,
   FormControl,

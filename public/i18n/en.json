@@ -69,5 +69,7 @@
   "Send Code": "Send Code",
   "Verification Code": "Verification Code",
   "Please enter valid verification Code": "Please enter valid verification Code",
-  "New Password": "New Password"
+  "New Password": "New Password",
+  "Change Password": "Change Password",
+  "Current Password": "Current Password"
 }

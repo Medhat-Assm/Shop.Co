@@ -69,5 +69,7 @@
   "Send Code": "إرسال الرمز",
   "Verification Code": "رمز التحقق",
   "Please enter valid verification Code": "الرجاء إدخال رمز التحقق صالح",
-  "New Password": "كلمة المرور الجديدة"
+  "New Password": "كلمة المرور الجديدة",
+  "Change Password": "تغير كلمة المرور",
+  "Current Password": "كلمة المرور الحالية"
 }

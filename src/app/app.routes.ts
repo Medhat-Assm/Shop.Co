@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/main/home/home.component';
 import { loggedInGuard } from './core/guards/loggedIn/logged-in.guard';
 import path from 'path';
+import { loggedOutGuard } from './core/guards/loggedOut/logged-out.guard';
 
 let projectTitle: string = 'Shop.Co';
 export const routes: Routes = [
@@ -46,6 +47,15 @@ export const routes: Routes = [
       ),
     canActivate: [loggedInGuard],
     title: `${projectTitle} - Reset Password`,
+  },
+  {
+    path: 'change-password',
+    loadComponent: () =>
+      import('./pages/auth/change-password/change-password.component').then(
+        (m) => m.ChangePasswordComponent
+      ),
+    canActivate: [loggedOutGuard],
+    title: `${projectTitle} - Change Password`,
   },
   {
     path: '**',
