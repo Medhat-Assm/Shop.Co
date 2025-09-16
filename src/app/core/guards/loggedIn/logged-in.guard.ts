@@ -1,16 +1,20 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { PlatformService } from '../../services/platform/platform.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { catchError, map, of } from 'rxjs';
 
 export const loggedInGuard: CanActivateFn = (route, state) => {
-  let router: Router = inject(Router);
-  let myPlatformService: PlatformService = inject(PlatformService);
-  if (myPlatformService.checkPlatFormBrowser()) {
-    const token = localStorage.getItem('userToken');
-    if (!token) {
-      return true;
-    }
-    return router.createUrlTree(['/home']);
+  const router: Router = inject(Router);
+  const platformService: PlatformService = inject(PlatformService);
+  const authService: AuthService = inject(AuthService);
+
+  if (!platformService.checkPlatFormBrowser()) {
+    return true;
   }
-  return true;
+
+  return authService.verifyToken().pipe(
+    map(() => router.createUrlTree(['/home'])),
+    catchError(() => of(true))
+  );
 };

@@ -1,5 +1,5 @@
 <section class="pt-[8rem] flex items-center justify-center">
-  <div class="w-[50%] bg-white dark:bg-black/20 rounded-xl shadow-lg overflow-hidden p-6">
+  <div class="w-full md:w-[50%] bg-white dark:bg-black/20 rounded-xl shadow-lg overflow-hidden p-6">
     <h2
       class="text-black dark:text-white font-[integralCF-bold] tracking-widest text-xl font-bold mb-10"
     >
@@ -164,6 +164,13 @@
       >
         <p>{{ 'Login' | translate }}</p>
       </button>
+
+      <div class="pt-5 ps-3 flex justify-between flex-col gap-4">
+        <a class="underline cursor-pointer">Forget Password?</a>
+        <a routerLink="/register" class="underline cursor-pointer"
+          >Don't have account? <span class="font-bold">Create Account</span></a
+        >
+      </div>
     </form>
 
     @if(errorMessage().length > 0) {

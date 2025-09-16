@@ -413,6 +413,12 @@
       >
         <p>{{ 'Create Account' | translate }}</p>
       </button>
+
+      <div class="pt-5 ps-3 flex justify-between flex-col gap-4">
+        <a routerLink="/login" class="underline cursor-pointer"
+          >Have Account? <span class="font-bold">Login Now</span></a
+        >
+      </div>
     </form>
 
     @if(errorMessage().length > 0) {

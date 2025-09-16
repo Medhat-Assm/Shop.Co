@@ -139,10 +139,7 @@
             id="user-dropdown"
           >
             <div class="px-4 py-3">
-              <span class="block text-sm text-white dark:text-black">Bonnie Green</span>
-              <span class="block text-sm text-gray-500 truncate dark:text-gray-400"
-                >name@flowbite.com</span
-              >
+              <span class="block text-sm text-white dark:text-black">{{ userData()!.name }}</span>
             </div>
             <ul class="py-2" aria-labelledby="user-menu-button">
               <li>
@@ -287,10 +284,9 @@
                     <i
                       class="fa-solid fa-user text-white dark:text-black transition-colors duration-500 ease-in-out"
                     ></i>
-                    <p class="font-bold text-white dark:text-black">Bonnie Green</p>
+                    <p class="font-bold text-white dark:text-black">{{ userData()!.name }}</p>
                   </div>
-                  <span class="text-gray-500">name@flowbite.com</span></a
-                >
+                </a>
               </li>
               <li>
                 <a

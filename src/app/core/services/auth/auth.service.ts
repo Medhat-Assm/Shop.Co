@@ -29,4 +29,10 @@ export class AuthService {
       .post(`${environment.baseUrl}auth/signin`, userData)
       .pipe(tap((res) => console.log(res)));
   }
+
+  verifyToken(): Observable<any> {
+    return this.httpClient
+      .get(`${environment.baseUrl}auth/verifyToken`)
+      .pipe(tap((res) => console.log(res)));
+  }
 }
