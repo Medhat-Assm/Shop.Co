@@ -35,4 +35,22 @@ export class AuthService {
       .get(`${environment.baseUrl}auth/verifyToken`)
       .pipe(tap((res) => console.log(res)));
   }
+
+  forgetPassword(userEmail: Object): Observable<any> {
+    return this.httpClient
+      .post(`${environment.baseUrl}auth/forgotPasswords`, userEmail)
+      .pipe(tap((res) => console.log(res)));
+  }
+
+  verifyResetCode(verificationCode: Object): Observable<any> {
+    return this.httpClient
+      .post(`${environment.baseUrl}auth/verifyResetCode`, verificationCode)
+      .pipe(tap((res) => console.log(res)));
+  }
+
+  resetPassword(userData: User): Observable<any> {
+    return this.httpClient
+      .put(`${environment.baseUrl}auth/resetPassword`, userData)
+      .pipe(tap((res) => console.log(res)));
+  }
 }

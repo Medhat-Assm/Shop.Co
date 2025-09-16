@@ -58,5 +58,16 @@
   "Max length is 20 letter": "الحد الأقصى للطول هو 20 حرفًا",
   "Min length is 3 letter": "الحد الأدنى للطول هو 3 أحرف",
   "Your Name": "اسمك",
-  "User Name": "اسم المستخدم"
+  "User Name": "اسم المستخدم",
+  "Forget Password?": "نسيت كلمة المرور؟",
+  "Forget Password": "نسيت كلمة المرور",
+  "Don't have account?": "ليس لديك حساب؟",
+  "Have Account?": "هل لديك حساب؟",
+  "Reset Password": "إعادة تعيين كلمة المرور",
+  "Resend Again": "ارسال الرمز مره اخري",
+  "Verify Code": "التحقق من الرمز",
+  "Send Code": "إرسال الرمز",
+  "Verification Code": "رمز التحقق",
+  "Please enter valid verification Code": "الرجاء إدخال رمز التحقق صالح",
+  "New Password": "كلمة المرور الجديدة"
 }

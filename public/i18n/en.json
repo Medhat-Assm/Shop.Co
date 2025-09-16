@@ -58,5 +58,16 @@
   "Max length is 20 letter": "Max length is 20 letter",
   "Min length is 3 letter": "Min length is 3 letter",
   "Your Name": "Your Name",
-  "User Name": "User Name"
+  "User Name": "User Name",
+  "Forget Password?": "Forget Password?",
+  "Forget Password": "Forget Password",
+  "Don't have account?": "Don't have account?",
+  "Have Account?": "Have Account?",
+  "Reset Password": "Reset Password",
+  "Resend Again": "Resend Again",
+  "Verify Code": "Verify Code",
+  "Send Code": "Send Code",
+  "Verification Code": "Verification Code",
+  "Please enter valid verification Code": "Please enter valid verification Code",
+  "New Password": "New Password"
 }
