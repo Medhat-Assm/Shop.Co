@@ -12,6 +12,7 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { loadingInterceptor } from './core/interceptors/loading/loading.interceptor';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { headerInterceptor } from './core/interceptors/header/header.interceptor';
+import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -37,5 +38,6 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(withEventReplay()),
+    provideToastr(), // Toastr providers
   ],
 };

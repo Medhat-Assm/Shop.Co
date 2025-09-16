@@ -3,11 +3,16 @@ import { HomeComponent } from './pages/main/home/home.component';
 import { loggedInGuard } from './core/guards/loggedIn/logged-in.guard';
 import path from 'path';
 import { loggedOutGuard } from './core/guards/loggedOut/logged-out.guard';
+import { ProductsComponent } from './shared/components/products/products.component';
+import { CategoriesComponent } from './shared/components/categories/categories.component';
+import { BrandsComponent } from './shared/components/brands/brands.component';
 
 let projectTitle: string = 'Shop.Co';
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: `${projectTitle} - Home` },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
+
+  //#region Auth Components
   {
     path: 'register',
     loadComponent: () =>
@@ -57,6 +62,23 @@ export const routes: Routes = [
     canActivate: [loggedOutGuard],
     title: `${projectTitle} - Change Password`,
   },
+  //#endregion
+  { path: 'products', component: ProductsComponent, title: `${projectTitle} - Products` },
+
+  {
+    path: 'product-details/:id',
+    loadComponent: () =>
+      import('./shared/components/products/product-details/product-details.component').then(
+        (m) => m.ProductDetailsComponent
+      ),
+    title: `${projectTitle} - Product Details`,
+  },
+  { path: 'categories', component: CategoriesComponent, title: `${projectTitle} - Categories` },
+  { path: 'brands', component: BrandsComponent, title: `${projectTitle} - Brands` },
+  //#region Shared Component
+
+  //#endregion
+
   {
     path: '**',
     loadComponent: () =>

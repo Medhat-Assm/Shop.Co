@@ -1,1 +1,7 @@
-<p>categories works!</p>
+<section class="pt-[7rem]">
+  <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
+    @for (item of categories(); track item._id) {
+    <app-category-card [oneCategory]="item" />
+    }
+  </div>
+</section>
