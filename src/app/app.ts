@@ -3,13 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { FlowbiteService } from './core/services/flowbite/flowbite.service';
 import { initFlowbite } from 'flowbite';
 import { NavbarComponent } from './pages/layouts/navbar/navbar.component';
-import { PlatformService } from './core/services/platform/platform.service';
 import { BannerComponent } from './pages/layouts/banner/banner.component';
 import { FooterComponent } from './pages/layouts/footer/footer.component';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, BannerComponent, FooterComponent, RouterOutlet],
+  imports: [NavbarComponent, BannerComponent, FooterComponent, RouterOutlet, NgxSpinnerModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -17,8 +17,8 @@ export class App {
   protected readonly title = signal('Shop.Co');
 
   //#region Services Inject
-  flowbiteService: FlowbiteService = inject(FlowbiteService);
-  platformService: PlatformService = inject(PlatformService);
+  private readonly flowbiteService: FlowbiteService = inject(FlowbiteService);
+  private spinner: NgxSpinnerService = inject(NgxSpinnerService);
   //#endregion
 
   //#region Flowbite Configuration Inject

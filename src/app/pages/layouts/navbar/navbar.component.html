@@ -93,12 +93,14 @@
       </button>
     </div>
     <div class="md:flex hidden md:order-3 gap-5 items-center">
-      @if(true){
+      @if(!isLogin()){
       <a
+        routerLink="login"
         class="text-white dark:text-black cursor-pointer hover:text-gray-200 hover:dark:text-gray-800"
         >{{ 'Login' | translate }}</a
       >
       <a
+        routerLink="register"
         class="text-black bg-white px-10 py-1 rounded-lg dark:text-white dark:bg-black hover:bg-gray-200 hover:dark:bg-gray-800 cursor-pointer"
         >{{ 'Sign up now' | translate }}</a
       >
@@ -157,7 +159,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  (click)="logout()"
                   class="block px-4 py-2 text-sm text-red-500 cursor-pointer dark:hover:bg-gray-200 hover:bg-gray-800"
                   >{{ 'Sign out' | translate }}</a
                 >
@@ -247,12 +249,14 @@
         <li>
           <div class="h-[0.5px] w-full bg-gray-800 dark:bg-gray-100"></div>
           <div class="flex md:hidden md:order-3 gap-5 items-center mt-5">
-            @if(true){
+            @if(!isLogin()){
             <a
+              routerLink="login"
               class="block py-2 px-3 text-white rounded-sm md:bg-transparent md:text-white md:p-0 dark:text-black hover:text-gray-200 hover:dark:text-gray-800 cursor-pointer transition-colors duration-500 ease-in-out"
               >{{ 'Login' | translate }}</a
             >
             <a
+              routerLink="register"
               class="text-black bg-white px-10 py-1 rounded-lg dark:text-white dark:bg-black hover:bg-gray-200 hover:dark:bg-gray-800 cursor-pointer"
               >{{ 'Sign up now' | translate }}</a
             >
@@ -290,7 +294,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  (click)="logout()"
                   class="block px-4 py-2 text-sm text-red-500 bg-gray-800 dark:bg-gray-300 rounded-md cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-200"
                   >{{ 'Sign out' | translate }}</a
                 >
