@@ -76,5 +76,20 @@
   "Add to Cart": "أضف إلى السلة",
   "Learn more": "اقرأ المذيد",
   "Added to Wishlist": "تمت الإضافة إلى قائمة الرغبات",
-  "See our website": "زيارة موقعنا على الانترنت"
+  "See our website": "زيارة موقعنا على الانترنت",
+  "My Shopping Cart": "سلة التسوق الخاصة بي",
+  "Product": "منتج",
+  "Price": "سعر",
+  "Quantity": "كمية",
+  "Subtotal": "المجموع الفرعي",
+  "Cart Total": "إجمالي العربة",
+  "Total": "المجموع",
+  "Shipping": "شحن",
+  "Free": "مجاني",
+  "Proceed to checkout": "تابع عملية الشراء",
+  "Clear Cart": "ازالة جمبع المنتجات",
+  "Order Address": "عنوان الطلب",
+  "Details": "تفاصيل",
+  "City": "مدينة",
+  "Checkout": "ادفع"
 }

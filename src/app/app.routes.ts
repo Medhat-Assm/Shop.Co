@@ -63,6 +63,8 @@ export const routes: Routes = [
     title: `${projectTitle} - Change Password`,
   },
   //#endregion
+
+  //#region Shared Component
   { path: 'products', component: ProductsComponent, title: `${projectTitle} - Products` },
 
   {
@@ -75,10 +77,23 @@ export const routes: Routes = [
   },
   { path: 'categories', component: CategoriesComponent, title: `${projectTitle} - Categories` },
   { path: 'brands', component: BrandsComponent, title: `${projectTitle} - Brands` },
-  //#region Shared Component
-
   //#endregion
 
+  //#region Main Component
+  {
+    path: 'cart',
+    loadComponent: () => import('./pages/main/cart/cart.component').then((m) => m.CartComponent),
+    title: `${projectTitle} - Cart`,
+    canActivate: [loggedOutGuard],
+  },
+  {
+    path: `order/:id`,
+    loadComponent: () =>
+      import('./pages/main/cart/order/order.component').then((m) => m.OrderComponent),
+    title: 'Shop.Co - Request Order',
+    canActivate: [loggedOutGuard],
+  },
+  //#endregion
   {
     path: '**',
     loadComponent: () =>

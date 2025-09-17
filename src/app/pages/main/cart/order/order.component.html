@@ -1,0 +1,163 @@
+<section class="flex justify-center items-center py-10 mt-[5rem]">
+  <div class="w-full md:w-auto bg-white dark:bg-black/20 rounded-xl shadow-lg overflow-hidden p-6">
+    <h2
+      class="text-black dark:text-white font-[integralCF-bold] tracking-widest text-xl font-bold mb-2"
+    >
+      {{ 'Order Address' | translate }}
+    </h2>
+    <form [formGroup]="addressForm" (ngSubmit)="checkout()">
+      <div class="flex justify-center items-center mb-6 gap-12 flex-col md:flex-row">
+        <div class="space-y-4 w-full md:w-auto">
+          <div>
+            <label
+              for="website-admin"
+              class="block mb-2 text-sm font-medium text-black/60 dark:text-white/60"
+              >{{ 'Details' | translate }}</label
+            >
+            <div class="flex">
+              <span
+                class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md"
+              >
+                <i class="fa-solid fa-circle-info text-black"></i>
+              </span>
+              <input
+                formControlName="details"
+                type="text"
+                class="rounded-none rounded-e-lg block w-full md:w-80 lg:w-110 p-2.5 text-sm text-gray-900 border border-gray-300 bg-gray-50 focus:ring-[var(--primary-color)]/10 focus:border-[var(--primary-color)]/10"
+                [placeholder]="'Details' | translate"
+              />
+            </div>
+            @if(addressForm.get('details')?.touched && addressForm.get('details')?.errors) {
+            @if(addressForm.get('details')?.errors?.['required']) {
+            <div
+              class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">{{ 'Info' | translate }}</span>
+              <div>{{ 'This field is required' | translate }}</div>
+            </div>
+            } }
+          </div>
+          <div>
+            <label
+              for="website-admin"
+              class="block mb-2 text-sm font-medium text-black/60 dark:text-white/60"
+              >{{ 'PhoneNumber' | translate }}</label
+            >
+            <div class="flex">
+              <span
+                class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md"
+              >
+                <i class="fa-solid fa-mobile text-black"></i>
+              </span>
+              <input
+                formControlName="phone"
+                type="text"
+                class="rounded-none rounded-e-lg block w-full md:w-80 lg:w-110 p-2.5 text-sm text-gray-900 border border-gray-300 bg-gray-50 focus:ring-[var(--primary-color)]/10 focus:border-[var(--primary-color)]/10"
+                [placeholder]="'PhoneNumber' | translate"
+              />
+            </div>
+            @if(addressForm.get('phone')?.touched && addressForm.get('phone')?.errors) {
+            @if(addressForm.get('phone')?.errors?.['required']) {
+            <div
+              class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">{{ 'Info' | translate }}</span>
+              <div>{{ 'This field is required' | translate }}</div>
+            </div>
+            }@else if(addressForm.get('phone')?.errors?.['pattern']) {
+            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+              <div class="flex items-center">
+                <svg
+                  class="shrink-0 inline w-4 h-4 me-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                  />
+                </svg>
+                <span class="sr-only">{{ 'Info' | translate }}</span>
+                <div>{{ 'Please Enter Valid Phone Number' | translate }}</div>
+              </div>
+            </div>
+            } }
+          </div>
+          <div>
+            <label
+              for="website-admin"
+              class="block mb-2 text-sm font-medium text-black/60 dark:text-white/60"
+              >{{ 'City' | translate }}</label
+            >
+            <div class="flex">
+              <span
+                class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md"
+              >
+                <i class="fa-solid fa-location-dot text-black"></i>
+              </span>
+              <input
+                formControlName="city"
+                type="text"
+                class="rounded-none rounded-e-lg block w-full md:w-80 lg:w-110 p-2.5 text-sm text-gray-900 border border-gray-300 bg-gray-50 focus:ring-[var(--primary-color)]/10 focus:border-[var(--primary-color)]/10"
+                [placeholder]="'City' | translate"
+              />
+            </div>
+            @if(addressForm.get('city')?.touched && addressForm.get('city')?.errors) {
+            @if(addressForm.get('city')?.errors?.['required']) {
+            <div
+              class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+              role="alert"
+            >
+              <svg
+                class="shrink-0 inline w-4 h-4 me-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                />
+              </svg>
+              <span class="sr-only">{{ 'Info' | translate }}</span>
+              <div>{{ 'This field is required' | translate }}</div>
+            </div>
+            } }
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="!addressForm.valid"
+        class="flex gap-3 items-center justify-center disabled:bg-black/20 dark:disabled:bg-white/20 w-full text-white bg-black hover:bg-black/90 dark:text-black dark:bg-white dark:hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-xl px-4 py-2 text-center cursor-pointer disabled:cursor-not-allowed"
+      >
+        {{ 'Checkout' | translate }}
+      </button>
+    </form>
+  </div>
+</section>
