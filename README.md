@@ -4,13 +4,21 @@ Live Demo 👉 [Shop.Co on Vercel](https://shop-co-lime-one.vercel.app/)
 
 Shop.Co is a modern **e-commerce web application** built with the latest Angular ecosystem. It demonstrates clean architecture, scalable folder structure, server-side rendering (SSR), and a responsive UI powered by TailwindCSS.
 
-This project UI/UX was inspired by a [Figma E‑commerce Template](https://www.figma.com/proto/KuWraFEHiIOFesumuJYwAt/E-commerce-Website-Template--Freebie---Community-?node-id=0-1&t=Dy0p4VipuJMscQr5-1).
+This project UI/UX was inspired by a [Figma E-commerce Template](https://www.figma.com/proto/KuWraFEHiIOFesumuJYwAt/E-commerce-Website-Template--Freebie---Community-?node-id=0-1&t=Dy0p4VipuJMscQr5-1).
+
+The application is fully integrated with an external **E-commerce API** 👉 [Postman Documentation](https://documenter.getpostman.com/view/5709532/2s93JqTRWN#intro) for handling products, categories, authentication, orders, and more.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 **Authentication flow** (Login, Register, Forgot Password, Change Password, Verification Code)
+- 🔐 **Authentication flow**
+
+  - Login / Register
+  - Verification Code
+  - Forget Password & Reset Password (fully handled with API integration)
+  - Change User Password
+
 - 🛒 **Wishlist & Cart** management using Angular **Signals**
 - 📦 **Dynamic product catalog** with categories, brands & filters
 - ❤️ Add / remove products from wishlist
@@ -36,6 +44,7 @@ This project UI/UX was inspired by a [Figma E‑commerce Template](https://www.f
   - `ngx-toastr` → Toast notifications
   - `@ngx-translate/core` & `@ngx-translate/http-loader` → Internationalization (i18n)
 
+- **Backend API**: [E-commerce API](https://documenter.getpostman.com/view/5709532/2s93JqTRWN#intro)
 - **Build & Deploy**: [Vercel](https://vercel.com)
 - **Linting & Formatting**: ESLint + Prettier
 
@@ -43,7 +52,7 @@ This project UI/UX was inspired by a [Figma E‑commerce Template](https://www.f
 
 ## 📂 Services
 
-- **Auth Service** → Handle authentication (login, register, JWT decode, verification)
+- **Auth Service** → Handle authentication (login, register, JWT decode, verification, forget password, change password)
 - **Categories Service** → Fetch and manage product categories
 - **Sub Categories Service** → Manage nested categories
 - **Brands Service** → Manage product brands
@@ -91,8 +100,9 @@ This project UI/UX was inspired by a [Figma E‑commerce Template](https://www.f
 
 - Login
 - Register
-- Forget Password
+- Forget Password (API integrated)
 - Change User Password
+- Verification Code
 
 ### Shared
 
