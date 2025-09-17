@@ -93,6 +93,14 @@ export const routes: Routes = [
     title: 'Shop.Co - Request Order',
     canActivate: [loggedOutGuard],
   },
+
+  {
+    path: 'wishlist',
+    loadComponent: () =>
+      import('./pages/main/wishlist/wishlist.component').then((m) => m.WishlistComponent),
+    title: `${projectTitle} - Wishlist`,
+    canActivate: [loggedOutGuard],
+  },
   //#endregion
   {
     path: '**',

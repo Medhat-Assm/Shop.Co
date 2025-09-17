@@ -17,4 +17,8 @@ export class WishlistService {
   getLoggedUserWishlist(): Observable<any> {
     return this.httpClient.get(`${environment.baseUrl}wishlist`);
   }
+
+  removeProductFromWishlist(productId: string): Observable<any> {
+    return this.httpClient.delete(`${environment.baseUrl}wishlist/${productId}`);
+  }
 }
