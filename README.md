@@ -1,59 +1,186 @@
-# ShopCo
+# 🛍️ Shop.Co
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+Live Demo 👉 [Shop.Co on Vercel](https://shop-co-lime-one.vercel.app/)
 
-## Development server
+Shop.Co is a modern **e-commerce web application** built with the latest Angular ecosystem. It demonstrates clean architecture, scalable folder structure, server-side rendering (SSR), and a responsive UI powered by TailwindCSS.
 
-To start a local development server, run:
+This project UI/UX was inspired by a [Figma E‑commerce Template](https://www.figma.com/proto/KuWraFEHiIOFesumuJYwAt/E-commerce-Website-Template--Freebie---Community-?node-id=0-1&t=Dy0p4VipuJMscQr5-1).
 
-```bash
-ng serve
+---
+
+## 🚀 Features
+
+- 🔐 **Authentication flow** (Login, Register, Forgot Password, Change Password, Verification Code)
+- 🛒 **Wishlist & Cart** management using Angular **Signals**
+- 📦 **Dynamic product catalog** with categories, brands & filters
+- ❤️ Add / remove products from wishlist
+- 🌙 Dark / light mode toggle
+- 🌍 **Multi-language support** (RTL/LTR switch using ngx-translate)
+- 📱 Fully responsive layout
+- ⚡ Optimized with **SSR + Prerendering**
+- 🎨 Modern UI with **TailwindCSS + Flowbite components**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Angular 17](https://angular.dev) (Standalone Components, Signals, Angular Forms, Server Routes)
+- **Styling**: [TailwindCSS](https://tailwindcss.com) + [Flowbite](https://flowbite.com) + [FontAwesome](https://fontawesome.com) + [Lucide Icons](https://lucide.dev)
+- **State Management**: Angular **Signals**
+- **Routing**: Angular Server Routes (SSR / Prerender)
+- **Utilities**:
+
+  - `jwt-decode` → Decode JWT tokens
+  - `ngx-owl-carousel-o` → Product carousels & sliders
+  - `ngx-spinner` → Loading spinners
+  - `ngx-toastr` → Toast notifications
+  - `@ngx-translate/core` & `@ngx-translate/http-loader` → Internationalization (i18n)
+
+- **Build & Deploy**: [Vercel](https://vercel.com)
+- **Linting & Formatting**: ESLint + Prettier
+
+---
+
+## 📂 Services
+
+- **Auth Service** → Handle authentication (login, register, JWT decode, verification)
+- **Categories Service** → Fetch and manage product categories
+- **Sub Categories Service** → Manage nested categories
+- **Brands Service** → Manage product brands
+- **Products Service** → Handle product CRUD and fetching logic
+- **Wishlist Service** → Add/remove/get wishlist items
+- **User Address Service** → Store & manage user addresses
+- **Cart Service** → Add/remove/update cart items
+- **Order Service** → Place and manage user orders
+- **Platform Service** → Detect and adapt to platform (server/client)
+
+---
+
+## 🔄 RxJS Pipe Operators Used
+
+- **map** → Transform API responses before reaching components
+- **shareReplay** → Cache the latest API response and share it with multiple subscribers (avoid duplicate calls)
+
+---
+
+## 🧩 Interceptors
+
+- **Error Interceptor** → Global error handling
+- **Header Interceptor** → Attach authentication headers (e.g., JWT)
+- **Loading Interceptor** → Trigger loading spinner during HTTP requests
+
+---
+
+## 🔐 Guards
+
+- **LoggedInGuard** → Prevents logged-in users from accessing auth pages (login/register)
+- **LoggedOutGuard** → Prevents non-authenticated users from accessing protected pages (wishlist, cart, checkout, orders)
+
+---
+
+## 🧱 Components
+
+### Layout
+
+- Layout Component
+- Navbar
+- Footer
+- NotFound
+
+### Auth
+
+- Login
+- Register
+- Forget Password
+- Change User Password
+
+### Shared
+
+- Products
+- Filter
+- Categories
+- Brands
+
+### Main
+
+- Home
+
+  - Hero Component
+  - New Arrival
+  - Top Selling
+  - Browse By Category
+  - Testimonial
+
+- Wishlist
+- Cart
+- Checkout Order
+- All Orders
+- About Us
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── app/
+ │   ├── core/         # Core services, guards, interceptors
+ │   ├── features/     # Feature modules (auth, cart, wishlist, products…)
+ │   ├── shared/       # Shared UI components & utilities
+ │   ├── app.config.ts # Angular app bootstrap config
+ │   └── app.routes.ts # Server routes (SSR / Prerender)
+ ├── assets/           # Static assets (images, icons…)
+ └── styles/           # Global Tailwind styles
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Installation & Running Locally
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repo:
 
 ```bash
-ng generate --help
+git clone https://github.com/Medhat-Assm/Shop.Co.git
+cd Shop.Co
 ```
 
-## Building
-
-To build the project run:
+2. Install dependencies:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+3. Run in development mode:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+The app will be available at `http://localhost:4200`.
 
-For end-to-end (e2e) testing, run:
+4. Build for production:
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🌍 Deployment
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- The project is deployed on **Vercel** using Angular SSR adapter.
+- Automatic builds & deployments on push to `main`.
+
+---
+
+## 📸 Screenshots
+
+_(Add some screenshots here for better showcase)_
+
+---
+
+## 👨‍💻 Author
+
+Developed with ❤️ by [Medhat Assem](https://github.com/Medhat-Assm)
+
+---
