@@ -1,1 +1,21 @@
-<p>browser-by-category works!</p>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
+<div class="mt-[7rem]">
+  <h1 class="text-3xl font-medium text-slate-800 dark:text-white text-center mb-2 font-poppins">
+    {{ 'Browser By Categories' | translate }}
+  </h1>
+  <p class="text-slate-600 dark:text-white/50 mb-10 font-poppins text-center">
+    {{ 'Explore the best Categories in Egypt' | translate }}
+  </p>
+  <section class="flex flex-wrap items-center justify-center gap-6">
+    @for (item of categories(); track item._id) {
+    <app-category-card [oneCategory]="item" />
+    }
+  </section>
+</div>
