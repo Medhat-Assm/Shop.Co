@@ -4,7 +4,7 @@ Live Demo 👉 [Shop.Co on Vercel](https://shop-co-lime-one.vercel.app/)
 
 Shop.Co is a modern **e-commerce web application** built with the latest Angular ecosystem. It demonstrates clean architecture, scalable folder structure, server-side rendering (SSR), and a responsive UI powered by TailwindCSS.
 
-This project UI/UX was inspired by a [Figma E-commerce Template](https://www.figma.com/proto/KuWraFEHiIOFesumuJYwAt/E-commerce-Website-Template--Freebie---Community-?node-id=0-1&t=Dy0p4VipuJMscQr5-1).
+This project UI/UX was inspired by a [Figma E-commerce Template](https://www.figma.com/community/file/1273571982885059508).
 
 The application is fully integrated with an external **E-commerce API** 👉 [Postman Documentation](https://documenter.getpostman.com/view/5709532/2s93JqTRWN#intro) for handling products, categories, authentication, orders, and more.
 
