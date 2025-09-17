@@ -173,12 +173,6 @@ npm run build
 
 ---
 
-## 📸 Screenshots
-
-_(Add some screenshots here for better showcase)_
-
----
-
 ## 👨‍💻 Author
 
 Developed with ❤️ by [Medhat Assem](https://github.com/Medhat-Assm)
